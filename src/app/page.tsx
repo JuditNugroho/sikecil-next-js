@@ -1,4 +1,4 @@
-import ResponsiveHero from "@/components/ResponsiveHero"
+import ResponsiveHero from "@/components/Hero/ResponsiveHero"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
