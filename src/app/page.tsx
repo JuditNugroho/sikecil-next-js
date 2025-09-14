@@ -1,14 +1,14 @@
 import ResponsiveHero from "@/components/Hero/ResponsiveHero"
-import Navbar from "@/components/Navbar"
+import ResponsiveNavbar from "@/components/Navbar/ResponsiveNavbar"
 import Footer from "@/components/Footer"
 
 export default function Home() {
     return (
         <main>
-            <Navbar />
-            <ResponsiveHero />
+            <ResponsiveNavbar/>
+            <ResponsiveHero/>
             {/* Section lain nanti dimasukin sini */}
-            <Footer />
+            <Footer/>
         </main>
     )
 }

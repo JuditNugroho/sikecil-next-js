@@ -4,7 +4,7 @@ import Image from "next/image";
 import {useEffect, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 
-const DesktopHeroSection = () => {
+const DesktopHero = () => {
     const {scrollY} = useScroll();
 
     // Parallax background
@@ -24,6 +24,7 @@ const DesktopHeroSection = () => {
                 setDisplayText(fullText.slice(0, currentIndex + 1));
                 setCurrentIndex((prev) => prev + 1);
             }, 50);
+
             return () => clearTimeout(timeout);
         }
     }, [currentIndex, fullText]);
@@ -126,7 +127,11 @@ const DesktopHeroSection = () => {
                         className="inline-block"
                     >
                         <button
-                            className="rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3 text-base sm:text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl">
+                            className="rounded-full bg-gradient-to-r from-indigo-500 to-purple-600
+                         px-5 sm:px-6 lg:px-8 py-2.5 sm:py-3
+                         text-base sm:text-lg font-semibold text-white
+                         shadow-lg transition-all duration-300 hover:shadow-xl"
+                        >
                             Jelajahi Sekarang
                         </button>
                     </motion.div>
@@ -152,4 +157,4 @@ const DesktopHeroSection = () => {
     );
 };
 
-export default DesktopHeroSection;
+export default DesktopHero;

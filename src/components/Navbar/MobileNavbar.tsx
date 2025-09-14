@@ -2,21 +2,9 @@
 
 import Link from "next/link";
 import {useState, useEffect, useRef} from "react";
+import {NavItems, NavItem} from "./navbarItems";
 
-const NavItems = [
-    {href: "#artikel", label: "Artikel", icon: "📚"},
-    {href: "#kalkulator", label: "Kalkulator", icon: "🧮"},
-    {href: "#komunitas", label: "Komunitas", icon: "👥"},
-];
-
-const menuItems = [
-    ...NavItems,
-    {href: "#lain1", label: "Lain 1", icon: "🔹"},
-    {href: "#lain2", label: "Lain 2", icon: "🔹"},
-    {href: "#lain3", label: "Lain 3", icon: "🔹"},
-];
-
-export default function Navbar() {
+export default function MobileNavbar() {
     const [activeTab, setActiveTab] = useState(NavItems[0].href);
     const [isSheetOpen, setIsSheetOpen] = useState(false);
     const sheetRef = useRef<HTMLDivElement>(null);
@@ -56,29 +44,6 @@ export default function Navbar() {
 
     return (
         <>
-            {/* Desktop Navbar */}
-            <nav className="fixed top-0 left-0 w-full z-50 hidden md:block bg-white/90 backdrop-blur-sm shadow-sm">
-                <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <Link href="/" className="text-2xl font-bold text-blue-500">
-                        SiKecil
-                    </Link>
-                    <div className="flex space-x-6">
-                        {NavItems.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className={`text-gray-700 hover:text-blue-500 transition ${
-                                    activeTab === item.href ? "font-semibold text-blue-500" : ""
-                                }`}
-                                onClick={() => setActiveTab(item.href)}
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-            </nav>
-
             {/* Mobile Header */}
             <div
                 className="fixed top-0 left-0 right-0 z-50 md:hidden bg-white/90 backdrop-blur-sm shadow-sm flex items-center px-4 py-3">
@@ -111,7 +76,7 @@ export default function Navbar() {
                         </button>
 
                         {/* Menu Items */}
-                        {menuItems.map((item) => (
+                        {NavItems.map((item: NavItem) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
@@ -128,11 +93,14 @@ export default function Navbar() {
             {/* Mobile Fixed Tab Bar */}
             <div
                 className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white shadow-t flex justify-around border-t border-gray-200">
-                {NavItems.map((item) => (
+                {NavItems.map((item: NavItem) => (
                     <button
                         key={item.href}
                         className="flex flex-col items-center justify-center py-2 w-full"
-                        onClick={() => setActiveTab(item.href)}
+                        onClick={() => {
+                            setActiveTab(item.href);
+                            setIsSheetOpen(false);
+                        }}
                     >
             <span
                 className={`text-2xl ${
