@@ -6,6 +6,6 @@ export interface NavItem {
 
 export const NavItems: NavItem[] = [
     {href: "#artikel", label: "Artikel", icon: "📚"},
-    {href: "#kalkulator", label: "Kalkulator", icon: "🧮"},
+    {href: "#kalkulator", label: "Simulasi", icon: "🧮"},
     {href: "#komunitas", label: "Komunitas", icon: "👥"},
 ];
