@@ -19,8 +19,8 @@ const nunito = Nunito_Sans({
 
 // Page metadata
 export const metadata: Metadata = {
-    title: "SiKecil.id",
-    description: "Teman Parenting",
+    title: "SiKecil",
+    description: "Teman Setia Dalam Setiap Langkah Dan Perjalanan Tumbuh Si Kecil",
 }
 
 // RootLayout wraps the entire Next.js application

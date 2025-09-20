@@ -40,7 +40,7 @@ const MobileHero = () => {
                 <motion.p
                     className="mb-6 sm:mb-8 font-medium text-white/90 drop-shadow-lg"
                     style={{
-                        fontSize: "clamp(1rem, 4vw, 1.5rem)",
+                        fontSize: "clamp(1rem, 4.2vw, 1.5rem)",
                         lineHeight: "1.6",
                     }}
                     initial={{opacity: 0, y: 20}}

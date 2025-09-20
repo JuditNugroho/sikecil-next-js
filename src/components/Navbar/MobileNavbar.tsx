@@ -54,8 +54,9 @@ export default function MobileNavbar() {
             <div
                 className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white shadow-t flex justify-around border-t border-gray-200">
                 {NavItems.map((item: NavItem) => (
-                    <button
+                    <Link
                         key={item.href}
+                        href={item.href}
                         className="flex flex-col items-center justify-center py-2 w-full"
                         onClick={() => handleTabClick(item.href)}
                     >
@@ -66,7 +67,7 @@ export default function MobileNavbar() {
                             className={`text-sm ${activeTab === item.href ? "text-blue-500 font-semibold" : "text-gray-400"}`}>
                             {item.label}
                         </span>
-                    </button>
+                    </Link>
                 ))}
             </div>
         </>
